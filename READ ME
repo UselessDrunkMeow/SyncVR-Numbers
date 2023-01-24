@@ -1,11 +1,11 @@
-hi!
+Hi!
 This file contains a "short" discription of my game, and some of the choices i made while making it!
 
 The goal of the game is to finsih the drawings by conecting the dots in a specific order. There are three diffrent difficulties.
 I decided to make a game that was easy to play, and needed almost no introduction. I wanted it to use only the mouse, and one of its buttons.
 
 I made an editor script to make it easier to make new levels. It works by selecting the NAME object, and moving it to the location where you want to place a connector.
-In the inspector you can see three diffrent buttons you can push. 2 of them spawn a connector, at both a diffrent size. one of the removes the latest placed connecotr
+In the inspector you can see three diffrent buttons you can push. 2 of them spawn a connector, at both a diffrent size. one of the removes the latest placed connector.
 Simply just press one of the spawn buttons, and a connector will spawn with the correct number already assigned to it.
 
 I tried to make the game look a bit better by making the backgrounds match with the picture. 
