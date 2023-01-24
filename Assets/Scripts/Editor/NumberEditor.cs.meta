@@ -5,7 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - _NumberObject: {fileID: 1630598165401203486, guid: 6e8912de9f7ebe14db2e1c05e5107a34, type: 3}
-  - _Spawnlocation: {instanceID: 0}
+  - _SmallNumberObject: {fileID: 1630598165401203486, guid: e896692cb68ae614fab3ecb459992171, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
