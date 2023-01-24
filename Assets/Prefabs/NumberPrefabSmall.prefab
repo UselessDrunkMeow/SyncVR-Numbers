@@ -340,14 +340,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _WhatNumber: 0
   _Number: {fileID: 6589336741816658145}
+  _Particles: {fileID: 8494348967034686291, guid: 1cc13032ca6463e46b0d5c70ad1c14af, type: 3}
   _Line: {fileID: -9127588319560374811}
-  _CanBeSelected: 0
   _Conector: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  _DrawLine: 0
   _CenterPoint: {x: 0, y: 0, z: 0}
+  _Rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &6495292595280266159
 CanvasRenderer:
   m_ObjectHideFlags: 0

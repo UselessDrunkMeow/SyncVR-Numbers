@@ -8,21 +8,21 @@ public class NumberConector : MonoBehaviour
     public int _WhatNumber;
     public TextMeshProUGUI _Number;
 
+    public GameObject _Particles;
+
     [SerializeField] LineRenderer _Line;
 
-    [SerializeField] bool _CanBeSelected;
-    int _AmountOfConnectedLines;
+    bool _CanBeSelected;   
+    bool _DrawLine;
 
     [SerializeField] NumberConector _Conector;
 
     Vector2 _MousePos;
-    float _Distance;
 
     [SerializeField] LayerMask layerMask;
 
-    [SerializeField] bool _DrawLine;
-
     [SerializeField] Vector3 _CenterPoint;
+    [SerializeField] Quaternion _Rotation;
     void Start()
     {
         _CenterPoint = transform.position;
@@ -39,6 +39,11 @@ public class NumberConector : MonoBehaviour
         if (_CanBeSelected && _DrawLine)
         {
             DrawLine();
+        }        
+        if(_CanBeSelected &&_WhatNumber == GameManager.Instance._Connectors.Length)
+        {
+            _CanBeSelected = false;
+            GameManager.Instance.StartCoroutine("Win");
         }
     }
 
@@ -72,6 +77,9 @@ public class NumberConector : MonoBehaviour
                 _DrawLine = false;
                 _CanBeSelected = false;
                 _Conector._CanBeSelected = true;
+                _Conector.Particels();
+
+
             }
             else
             {
@@ -80,7 +88,6 @@ public class NumberConector : MonoBehaviour
                 _DrawLine = false;
                 _Line.enabled = false;
             }
-
         }      
     }
     void DrawLine()
@@ -93,4 +100,9 @@ public class NumberConector : MonoBehaviour
     {
         _MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }    
+    public void Particels()
+    {
+       GameObject particles= Instantiate(_Particles, _CenterPoint, _Rotation);
+        particles.transform.localScale = transform.localScale;
+    }
 }
