@@ -47,8 +47,7 @@ public class NumberConector : MonoBehaviour
         if (_CanBeSelected)
         {
             _DrawLine = true;
-        }
-        //gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+        }       
     }
     private void OnMouseUp()
     {
@@ -93,9 +92,5 @@ public class NumberConector : MonoBehaviour
     void MousePos()
     {
         _MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    }
-    void CheckCorrectLocation()
-    {
-
-    }
+    }    
 }

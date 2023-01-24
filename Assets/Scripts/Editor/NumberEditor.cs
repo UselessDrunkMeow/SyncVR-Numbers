@@ -11,7 +11,7 @@ public class NumberEditor : Editor
 
     private NumberConector _Number;//A refrence to the instantiated object
     private ListOfNumberPrefabs _List;//A list of all the numbers in the scene
-    private NumberEditor _NumberEditor;//A list of all the numbers in the scene
+    private NumberEditor _NumberEditor;//This Editor script
 
     private int _WhatNumber;
 
@@ -27,7 +27,7 @@ public class NumberEditor : Editor
 
             _Number = Instantiate(_NumberObject, _Spawnlocation, _SpawnRotation).GetComponent<NumberConector>();//instantiate the object and save it for later use
 
-            _WhatNumber = _WhatNumber + 1;
+            _WhatNumber = _List._NumberConectors.Count + 1;
             _Number._WhatNumber = _WhatNumber;
 
             _List._NumberConectors.Add(_Number);//Adds the instantiated object to the list
@@ -39,7 +39,7 @@ public class NumberEditor : Editor
 
             _Number = Instantiate(_SmallNumberObject, _Spawnlocation, _SpawnRotation).GetComponent<NumberConector>();//instantiate the object and save it for later use
 
-            _WhatNumber = _WhatNumber + 1;
+            _WhatNumber = _List._NumberConectors.Count + 1;
             _Number._WhatNumber = _WhatNumber;
 
             _List._NumberConectors.Add(_Number);//Adds the instantiated object to the list
@@ -54,8 +54,8 @@ public class NumberEditor : Editor
 
             if (_Number != null)
             {
-                _WhatNumber = _WhatNumber - 1;
-                _Number._WhatNumber = _WhatNumber;
+                _WhatNumber = _List._NumberConectors.Count - 1;
+                //_Number._WhatNumber = _WhatNumber;
                 DestroyImmediate(_List._NumberConectors[_Number._WhatNumber].gameObject);//Destorys the object
                 _List._NumberConectors.RemoveAt(_Number._WhatNumber);//Removes the objcet from the list
             }
